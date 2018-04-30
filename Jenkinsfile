@@ -46,6 +46,7 @@ def unitTest() {
 
 def preview() {
     stage name: 'Deploy to Preview env', concurrency: 1
+    sh 'echo Preview phase'
 }
 
 def preProduction() {
