@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"> <!-- </html> manifest="homeslice.appcache"> -->
+
+<head>
+  <meta charset="utf-8"/>
+  <title>Meetingtime: Find time across the galaxy.</title>
+
+  <meta name="apple-mobile-web-app-title" content="Homeslice">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimal-ui" />
+  <link rel="apple-touch-icon-precomposed" href="assets/icon.png" />
+  <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/styles.css" type="text/css" />
+</head>
+
+<body>
+  <noscript>
+    <h1>You need JavaScript, pal.</h1>
+  </noscript>
+  <script>
+    // Reload if application cache has been updated.
+    if (window.applicationCache) {
+      applicationCache.addEventListener('updateready', function() {
+        window.location.reload();
+      });
+    }
+  </script>
+  <script charset="utf-8" src="vendor/fastclick.min.js"></script>
+  <script charset="utf-8">
+    window.addEventListener('load', function() {
+      FastClick.attach(document.body);
+    }, false);
+  </script>
+  <script charset="utf-8" src="vendor/moment.min.js"></script>
+  <script charset="utf-8" src="vendor/moment-timezone-with-data-2010-2020.min.js"></script>
+  <script charset="utf-8" src="vendor/jquery-2.1.3.min.js"></script>
+
+  <div class="buttoncluster">
+    <div id="timeformatbutton"></div>
+    <div id="settingsbutton">Set Cities</div>
+  </div>
+  <div id="settings" style="display: none">
+    <div class="savebutton">↫ I'm done pickin’</div>
+    <div class="searchbox">
+      <input id="filter" type="text" placeholder="Search places..." />
+      <div id="clearbutton">×</div>
+    </div>
+  </div>
+  <div class="headings" id="headings"></div>
+  <div class="cities" id="cities"></div>
+
+  <script charset="utf-8" src="assets/scripts/cookies.js"></script>
+  <script charset="utf-8" src="assets/scripts/url.js"></script>
+  <script charset="utf-8" src="assets/scripts/cities.js"></script>
+  <script charset="utf-8" src="assets/scripts/time_formats.js"></script>
+  <script charset="utf-8" src="assets/scripts/settings.js"></script>
+  <script charset="utf-8" src="assets/scripts/app.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    <!--ga('create', 'UA-5104693-21', 'auto');-->
+    ga('require', 'linkid', 'linkid.js');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>

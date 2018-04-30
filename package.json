@@ -1,0 +1,18 @@
+{
+  "name": "Homeslice",
+  "private": true,
+  "devDependencies": {},
+  "scripts": {
+    "test": "grunt travis --verbose"
+  },
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-jasmine": "^1.1.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-manifest": "^0.1.1",
+    "markdown-to-html": "0.0.13"
+  }
+}

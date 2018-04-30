@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner</title>
+  <link rel="shortcut icon" type="image/png" href=".grunt/grunt-contrib-jasmine/jasmine_favicon.png">
+
+  <link rel="stylesheet" type="text/css" href=".grunt/grunt-contrib-jasmine/jasmine.css">
+
+
+</head>
+<body>
+  <% with (scripts) { %>
+    <% [].concat(polyfills, jasmine, boot, vendor, helpers).forEach(function(script){ %>
+    <script src="<%= script %>"></script>
+    <% }) %>
+  <% }; %>
+
+  <div class="buttoncluster">
+    <div id="timeformatbutton"></div>
+    <div id="settingsbutton">Set Cities</div>
+  </div>
+  <div id="settings">
+    <div class="savebutton">↫ I'm done pickin’</div>
+    <div class="searchbox">
+      <input id="filter" type="text" placeholder="Search places..." />
+      <div id="clearbutton">×</div>
+    </div>
+  </div>
+  <div class="headings" id="headings"></div>
+  <div class="cities" id="cities"></div>
+
+  <% with (scripts) { %>
+    <% [].concat(src, specs,reporters).forEach(function(script){ %>
+    <script src="<%= script %>"></script>
+    <% }) %>
+  <% }; %>
+
+</body>
+</html>
